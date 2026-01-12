@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk17'
+        jdk 'jdk11'
     }
 
     stages {
@@ -16,13 +16,13 @@ pipeline {
 
         stage('Compile') {
             steps {
-                sh 'javac Calculator.java Main.java'
+                bat 'javac Calculator.java Main.java'
             }
         }
 
         stage('Run') {
             steps {
-                sh 'java Main'
+                bat 'java Main'
             }
         }
     }
